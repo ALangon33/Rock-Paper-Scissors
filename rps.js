@@ -2,26 +2,33 @@
 matchOfGames();
 
 function matchOfGames() {
-// Define scores
-    let playerScore = 0;
-    let computerScore = 0;
-    let scoreKeeper;
-    // play 5 games
+  // Define scores
+  let playerScore = 0;
+  let computerScore = 0;
+  let scoreKeeper;
+  // play 5 games
   for (i = 0; i < 5; i++) {
     // Run a game and adjust score acordingly
     scoreKeeper = playRPS();
-    console.log(`Keeper` + ` ` + `${scoreKeeper}`)
+    console.log(`Keeper` + ` ` + `${scoreKeeper}`);
     if (scoreKeeper === 1) {
-        playerScore = playerScore + 1;
+      playerScore = playerScore + 1;
     } else if (scoreKeeper === -1) {
-        computerScore = computerScore + 1;
+      computerScore = computerScore + 1;
     } else {
-
-    };
+    }
     console.log(`Player:` + ` ` + `${playerScore}`);
     console.log(`CPU:` + ` ` + `${computerScore}`);
-};
-};
+  }
+
+  if (playerScore === computerScore) {
+    alert(`Match Tie` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+  } else if (playerScore < computerScore) {
+    alert(`Match Loss` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+  } else {
+    alert(`Match Victory` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+  }
+}
 
 // Compare user to opponent
 function playRPS() {
@@ -79,7 +86,7 @@ function playRPS() {
       `CPU : ${computerDisplay}`;
     alert(gameMessage);
     return 1;
-}
+  }
 }
 
 function getComputerChoice() {
