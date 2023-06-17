@@ -1,7 +1,6 @@
-// Select @ random opponent choice
 function getComputerChoice() {
     // Get Random # between 0 - 2
-    computerDecision = Math.floor(Math.random() * 3);
+    let computerDecision = Math.floor(Math.random() * 3);
     // If 0 : Rock, if 1 : Paper, else Scissors
     if (computerDecision === 0) {
         computerThrow = "Rock";
@@ -12,15 +11,26 @@ function getComputerChoice() {
     };
 };
 
+function matchRound(playerThrow, computerThrow) {
+// For 5 games 
+};
+
 // Compare user to opponent
 function playRPS() {
-// Request user input (Rock, Paper, or Scissors)
-    playerThrow = prompt("Rock, Paper, or Scissors?");
+    let playerThrow = prompt("Rock, Paper, or Scissors?");
+    // Request user input (Rock, Paper, or Scissors)
+    while ((playerThrow != "rock") && (playerThrow != "paper") && (playerThrow != "scissors")) {
+        playerThrow = prompt("Rock, Paper, or Scissors?");
+        playerThrow = playerThrow.toLowerCase();
+    };
+
+
+    // Select @ random opponent choice
     getComputerChoice();
-    playerThrow = playerThrow.toLowerCase();
     computerThrow = computerThrow.toLowerCase();
-    playerDisplay = (playerThrow.slice(0,1).toUpperCase() + playerThrow.slice(1));
-    computerDisplay = (computerThrow.slice(0,1).toUpperCase() + computerThrow.slice(1));
+
+    let playerDisplay = (playerThrow.slice(0,1).toUpperCase() + playerThrow.slice(1));
+    let computerDisplay = (computerThrow.slice(0,1).toUpperCase() + computerThrow.slice(1));
 
     if (playerThrow === computerThrow) {
         // If tie display evenly matched
