@@ -19,18 +19,18 @@ function playRPS() {
     getComputerChoice();
     playerThrow = playerThrow.toLowerCase();
     computerThrow = computerThrow.toLowerCase();
+    playerDisplay = (playerThrow.slice(0,1).toUpperCase() + playerThrow.slice(1));
+    computerDisplay = (computerThrow.slice(0,1).toUpperCase() + computerThrow.slice(1));
 
     if (playerThrow === computerThrow) {
         // If tie display evenly matched
-        playerDisplay = (playerThrow.slice(0,1).toUpperCase() + playerThrow.slice(1));
-        console.log(playerDisplay);
-        alert(`Evenly Matched` + ` ` + `Tied Throw : ${playerDisplay}`);
+        alert(`Evenly Matched` + `\n` + `Tied Throw : ${playerDisplay}`);
     } else if ((playerThrow == 'rock' && computerThrow == 'paper') || (playerThrow == 'paper' && computerThrow == 'scissors') || (playerThrow == 'scissors' && computerThrow == 'rock')) {
         // If lost display defeat message
-        alert(`Get Rekt` + ` ` + `Player : ${playerDisplay}`);
+        alert(`Get Rekt` + `\n` + `Player : ${playerDisplay}` + `\n` + `CPU : ${computerDisplay}`);
         // If won display victory message
     } else {
-        alert("Victory");
+        alert(`Victory` + `\n` + `Player : ${playerDisplay}` + `\n` + `CPU : ${computerDisplay}`);
     }
 
 };
