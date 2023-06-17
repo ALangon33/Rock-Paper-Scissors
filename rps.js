@@ -1,5 +1,8 @@
 // Request user input (Rock, Paper, or Scissors)
-let playerChoice = prompt("Rock, Paper, or Scissors?");
+function getPlayerChoice() {
+    let playerThrow = prompt("Rock, Paper, or Scissors?");
+};
+
 // Select @ random opponent choice
 function getComputerChoice() {
     // Get Random # between 0 - 2
@@ -18,9 +21,17 @@ function getComputerChoice() {
 
 };
 
-getComputerChoice();
 // Compare user to opponent
 function playRPS() {
+    getPlayerChoice();
+    console.log(playerThrow);
+    getComputerChoice();
+    console.log(computerThrow);
+
+    if (playerThrow == 'rock' && computerThrow == 'paper') || (playerThrow == 'paper' && computerThrow == 'scissors') || (playerThrow == 'scissors' && computerThrow == 'rock') {
+        // If lost display defeat message
+        // If won display victory message
+    }
 
 };
 
