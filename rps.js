@@ -22,11 +22,23 @@ function matchOfGames() {
   }
 
   if (playerScore === computerScore) {
-    alert(`Match Tie` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+    alert(
+      `Match Tie` +
+        `\n` +
+        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+    );
   } else if (playerScore < computerScore) {
-    alert(`Match Loss` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+    alert(
+      `Match Loss` +
+        `\n` +
+        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+    );
   } else {
-    alert(`Match Victory` + `\n` + `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`)
+    alert(
+      `Match Victory` +
+        `\n` +
+        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+    );
   }
 }
 
