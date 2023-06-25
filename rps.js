@@ -81,10 +81,11 @@ function playRPS(playerThrow) {
     computerThrow.slice(0, 1).toUpperCase() + computerThrow.slice(1);
 
 
-   if (playerThrow === computerThrow) {
+  if (playerThrow === computerThrow) {
     // If tie display evenly matched
-    let gameMessage = `Evenly Matched` + `\n` + `Tied Throw : ${playerDisplay}`;
+    let gameMessage = `Evenly Matched\n` + `Tied Throw : ${playerDisplay}`;
     output.textContent = gameMessage;
+    output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);   // If even return 0
     return 0;
   } else if (
@@ -94,24 +95,22 @@ function playRPS(playerThrow) {
   ) {
     // If lost display defeat message
     let gameMessage =
-      `Get Rekt` +
-      `\n` +
-      `Player : ${playerDisplay}` +
-      `\n` +
+      `Get Rekt\n` +
+      `Player : ${playerDisplay}\n` +
       `CPU : ${computerDisplay}`;
     output.textContent = gameMessage;
+    output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);
     // If lost return -1
     return -1;
     // If won display victory message
   } else {
     let gameMessage =
-      `Victory :` +
-      `\n` +
-      `Player : ${playerDisplay}` +
-      `\n` +
+      `Victory\n` +
+      `Player : ${playerDisplay}\n` +
       `CPU : ${computerDisplay}`;
     output.textContent = gameMessage;
+    output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);
     return 1;
   }
