@@ -1,5 +1,5 @@
 // Test match
-matchOfGames();
+// matchOfGames();
 
 function matchOfGames() {
   // Define scores

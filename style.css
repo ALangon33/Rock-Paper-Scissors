@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#container {
+    color:whitesmoke;
+    background-color: black;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+#container header {
+    background-color: rgb(17, 17, 17);
+    border-radius: 0.5rem;
+    font-size: 42px;
+    padding: 5px 20px;
+    margin: 20px 0px;
+    align-items: center;
+}
+
+#card-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    flex:1 1 auto;
+    flex-flow: row wrap;
+    display: flex;
+    align-items: center;
+
+}
+
+#output-container {
+    display:flex;
+    flex-flow:column nowrap;
+    flex:1;
+    font-size: 24px;
+    align-content:center;  
+}
+
+#container div button {
+    color:whitesmoke;
+    background-color: black;
+    flex-direction: row;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border-radius: 0.5rem;
+    font-size: 36px;
+    flex-basis:0;
+    border-color: black;
+}
+
+.selecting {
+    transform: scale(1.1);
+    border-color: #ff4800;
+    box-shadow: 0 0 1rem #ff4800;
+
+}
