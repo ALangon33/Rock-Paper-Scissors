@@ -3,6 +3,7 @@
 *::after {
     padding:0;
     margin:0;
+
 }
 
 body {
@@ -37,22 +38,19 @@ body {
     margin: 20px 0px;
     flex:1 1 auto;
     flex-flow: row wrap;
-    display: flex;
     align-items: center;
+    gap:50px;
 
 }
 
-#output-container {
+#output-container,
+#match-outcome-container {
     display:flex;
     flex-flow:column nowrap;
-    flex:1;
+    flex:1 auto;
     font-size: 24px;
     align-content:center;  
     text-align: center;
-}
-
-#output-container h3 {
-    padding:10px;
 }
 
 #container div button {
@@ -67,6 +65,7 @@ body {
     border-color: black;
     border-style: solid;
     transition: all .1s ease;
+
 }
 
 #container div button:hover {
@@ -75,4 +74,14 @@ body {
     border-color: #ff4800;
     box-shadow: 0 0 1rem #ff4800;
 
+}
+
+#outcome-container {
+    display:flex;
+    flex-flow:row nowrap;
+    align-content: stretch;
+    flex:1 auto;
+    justify-content: space-around;
+    align-items: center;
+    gap:100px;
 }

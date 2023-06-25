@@ -85,6 +85,7 @@ function playRPS(playerThrow) {
     // If tie display evenly matched
     let gameMessage = `Evenly Matched\n` + `Tied Throw : ${playerDisplay}`;
     output.textContent = gameMessage;
+    output.style.margin = '25px';
     output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);   // If even return 0
     return 0;
@@ -99,6 +100,7 @@ function playRPS(playerThrow) {
       `Player : ${playerDisplay}\n` +
       `CPU : ${computerDisplay}`;
     output.textContent = gameMessage;
+    output.style.margin = '25px';
     output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);
     // If lost return -1
@@ -110,6 +112,7 @@ function playRPS(playerThrow) {
       `Player : ${playerDisplay}\n` +
       `CPU : ${computerDisplay}`;
     output.textContent = gameMessage;
+    output.style.margin = '25px';
     output.style.whiteSpace = 'pre';
     outputCon.appendChild(output);
     return 1;
