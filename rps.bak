@@ -1,37 +1,20 @@
 const buttons = document.querySelectorAll('.button');
-const matchOutputCon = document.querySelector('#match-outcome-container')
-const matchOutput = document.createElement('p');
-matchOutput.style.whiteSpace = 'pre'
-let playerScore = 0;
-let computerScore = 0;
 
 function playerThrow(e) {
   e = this.id;
   // e.stopPropagation();
-  scoreKeeper = playRPS(e);
-    if (scoreKeeper === 0) {
-      matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
-      matchOutputCon.appendChild(matchOutput);
-    } else if (scoreKeeper === 1) {
-      playerScore++;
-      matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
-      matchOutputCon.appendChild(matchOutput);
-    } else {
-      computerScore++;
-      matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
-      matchOutputCon.appendChild(matchOutput);
-    };
+  playRPS(e);
 };
 
 buttons.forEach(button => button.addEventListener('click', playerThrow, {
   capture: false
 }));
 
-
 const outputCon = document.querySelector('#output-container');
 const output = document.createElement('p');
 
-
+const matchOutputCon = document.querySelector('#match-outcome-container')
+const matchOutput = document.createElement('p');
 
 
 // Test match
@@ -54,6 +37,8 @@ function matchOfGames(playerThrow) {
       computerScore = computerScore + 1;
     } else {
     }
+    console.log(`Player:` + ` ` + `${playerScore}`);
+    console.log(`CPU:` + ` ` + `${computerScore}`);
   }
 
   if (playerScore === computerScore) {
@@ -79,6 +64,16 @@ function matchOfGames(playerThrow) {
 
 // Compare user to opponent
 function playRPS(playerThrow) {
+
+  while (
+    playerThrow != "rock" &&
+    playerThrow != "paper" &&
+    playerThrow != "scissors"
+  ) {
+    playerThrow = prompt("Rock, Paper, or Scissors?");
+    playerThrow = playerThrow.toLowerCase();
+  }
+
   // Select @ random opponent choice
   getComputerChoice();
   // Convert for comparison
