@@ -43,7 +43,11 @@ const output = document.createElement('p');
 function checkVictory(plyr, cpu) {
   if (plyr === 5 || cpu === 5) {
     buttons.forEach(button => button.removeEventListener('click', playerThrow));
-    matchOutput.textContent = `Final Score\nPlayer : ${playerScore}\nCPU : ${computerScore}`;
+    if (plyr === 5) { 
+      matchOutput.textContent = `Victory\nPlayer : ${playerScore}\nCPU : ${computerScore}`;
+    } else {
+      matchOutput.textContent = `Defeat\nPlayer : ${playerScore}\nCPU : ${computerScore}`;
+    };
     matchOutput.style.margin = '25px';
     matchOutput.style.borderStyle = 'solid';
     matchOutput.style.borderColor = '#ff4800';
