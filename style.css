@@ -20,12 +20,15 @@ body {
 }
 
 #container header {
+    display: flex;
     background-color: rgb(17, 17, 17);
     border-radius: 0.5rem;
     font-size: 42px;
     padding: 5px 20px;
     margin: 20px 0px;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 #card-container {
@@ -57,9 +60,12 @@ body {
     font-size: 36px;
     flex-basis:0;
     border-color: black;
+    border-style: solid;
+    transition: all .07s ease;
 }
 
-.selecting {
+#container div button:hover {
+    border-style: solid;
     transform: scale(1.1);
     border-color: #ff4800;
     box-shadow: 0 0 1rem #ff4800;

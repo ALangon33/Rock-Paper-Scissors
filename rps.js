@@ -1,3 +1,15 @@
+const buttons = document.querySelectorAll('.button')
+
+function logText(e) {
+  console.log(this.id);
+  // e.stopPropagation();
+};
+
+buttons.forEach(button => button.addEventListener('click', logText , {
+  capture:false
+}));
+
+
 // Test match
 // matchOfGames();
 
@@ -24,20 +36,20 @@ function matchOfGames() {
   if (playerScore === computerScore) {
     alert(
       `Match Tie` +
-        `\n` +
-        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+      `\n` +
+      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   } else if (playerScore < computerScore) {
     alert(
       `Match Loss` +
-        `\n` +
-        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+      `\n` +
+      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   } else {
     alert(
       `Match Victory` +
-        `\n` +
-        `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
+      `\n` +
+      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   }
 }
