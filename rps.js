@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('.button')
+const buttons = document.querySelectorAll('.button');
 
 function playerThrow(e) {
   playerThrow = this.id;
@@ -6,10 +6,12 @@ function playerThrow(e) {
   playRPS(playerThrow);
 };
 
-buttons.forEach(button => button.addEventListener('click', playerThrow , {
-  capture:false
+buttons.forEach(button => button.addEventListener('click', playerThrow, {
+  capture: false
 }));
 
+const outputCon = document.querySelector('#output-container');
+const output = document.createElement('p');
 
 // Test match
 // matchOfGames();
@@ -35,25 +37,25 @@ function matchOfGames() {
   }
 
   if (playerScore === computerScore) {
-    alert(
+    console.log(
       `Match Tie` +
       `\n` +
       `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   } else if (playerScore < computerScore) {
-    alert(
+    console.log(
       `Match Loss` +
       `\n` +
       `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   } else {
-    alert(
+    console.log(
       `Match Victory` +
       `\n` +
       `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
     );
   }
-}
+};
 
 // Compare user to opponent
 function playRPS(playerThrow) {
@@ -78,12 +80,12 @@ function playRPS(playerThrow) {
   let computerDisplay =
     computerThrow.slice(0, 1).toUpperCase() + computerThrow.slice(1);
 
-  // Reveal outcome to user
-  if (playerThrow === computerThrow) {
+
+   if (playerThrow === computerThrow) {
     // If tie display evenly matched
     let gameMessage = `Evenly Matched` + `\n` + `Tied Throw : ${playerDisplay}`;
-    alert(gameMessage);
-    // If even return 0
+    output.textContent = gameMessage;
+    outputCon.appendChild(output);   // If even return 0
     return 0;
   } else if (
     (playerThrow == "rock" && computerThrow == "paper") ||
@@ -97,21 +99,26 @@ function playRPS(playerThrow) {
       `Player : ${playerDisplay}` +
       `\n` +
       `CPU : ${computerDisplay}`;
-    alert(gameMessage);
+    output.textContent = gameMessage;
+    outputCon.appendChild(output);
     // If lost return -1
     return -1;
     // If won display victory message
   } else {
     let gameMessage =
-      `Victory` +
+      `Victory :` +
       `\n` +
       `Player : ${playerDisplay}` +
       `\n` +
       `CPU : ${computerDisplay}`;
-    alert(gameMessage);
+    output.textContent = gameMessage;
+    outputCon.appendChild(output);
     return 1;
   }
-}
+
+  // Reveal outcome to user
+
+};
 
 function getComputerChoice() {
   // Get Random # between 0 - 2
@@ -124,4 +131,4 @@ function getComputerChoice() {
   } else {
     computerThrow = "Scissors";
   }
-}
+};
