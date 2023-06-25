@@ -43,53 +43,10 @@ const output = document.createElement('p');
 function checkVictory(plyr, cpu) {
   if (plyr === 5 || cpu === 5) {
     buttons.forEach(button => button.removeEventListener('click', playerThrow));
+    const matchResultCard = document.createElement('div')
   }
   return;
 }
-
-
-// Test match
-// matchOfGames();
-
-function matchOfGames(playerThrow) {
-  // Define scores
-  let playerScore = 0;
-  let computerScore = 0;
-  let scoreKeeper;
-  
-  // play 5 games
-  for (i = 0; i < 5; i++) {
-    // Run a game and adjust score acordingly
-    scoreKeeper = playRPS(playerThrow);
-    console.log(`Keeper` + ` ` + `${scoreKeeper}`);
-    if (scoreKeeper === 1) {
-      playerScore = playerScore + 1;
-    } else if (scoreKeeper === -1) {
-      computerScore = computerScore + 1;
-    } else {
-    }
-  }
-
-  if (playerScore === computerScore) {
-    console.log(
-      `Match Tie` +
-      `\n` +
-      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
-    );
-  } else if (playerScore < computerScore) {
-    console.log(
-      `Match Loss` +
-      `\n` +
-      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
-    );
-  } else {
-    console.log(
-      `Match Victory` +
-      `\n` +
-      `\nScore: \n  Player: ${playerScore} \n  CPU: ${computerScore}`
-    );
-  }
-};
 
 // Compare user to opponent
 function playRPS(playerThrow) {
