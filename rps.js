@@ -11,16 +11,23 @@ function playerThrow(e) {
   scoreKeeper = playRPS(e);
     if (scoreKeeper === 0) {
       matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
+      matchOutput.style.margin = '25px';
       matchOutputCon.appendChild(matchOutput);
+      checkVictory(playerScore, computerScore);
     } else if (scoreKeeper === 1) {
       playerScore++;
       matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
+      matchOutput.style.margin = '25px';
       matchOutputCon.appendChild(matchOutput);
+      checkVictory(playerScore, computerScore);
     } else {
       computerScore++;
       matchOutput.textContent = `Player : ${playerScore}\nCPU : ${computerScore}`;
+      matchOutput.style.margin = '25px';
       matchOutputCon.appendChild(matchOutput);
+      checkVictory(playerScore, computerScore);
     };
+
 };
 
 buttons.forEach(button => button.addEventListener('click', playerThrow, {
@@ -32,6 +39,13 @@ const outputCon = document.querySelector('#output-container');
 const output = document.createElement('p');
 
 
+
+function checkVictory(plyr, cpu) {
+  if (plyr === 5 || cpu === 5) {
+    buttons.forEach(button => button.removeEventListener('click', playerThrow));
+  }
+  return;
+}
 
 
 // Test match
