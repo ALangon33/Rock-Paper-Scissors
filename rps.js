@@ -1,11 +1,12 @@
 const buttons = document.querySelectorAll('.button')
 
-function logText(e) {
-  console.log(this.id);
+function playerThrow(e) {
+  playerThrow = this.id;
   // e.stopPropagation();
+  playRPS(playerThrow);
 };
 
-buttons.forEach(button => button.addEventListener('click', logText , {
+buttons.forEach(button => button.addEventListener('click', playerThrow , {
   capture:false
 }));
 
@@ -55,9 +56,8 @@ function matchOfGames() {
 }
 
 // Compare user to opponent
-function playRPS() {
-  let playerThrow = prompt("Rock, Paper, or Scissors?");
-  // Request user input (Rock, Paper, or Scissors)
+function playRPS(playerThrow) {
+
   while (
     playerThrow != "rock" &&
     playerThrow != "paper" &&
